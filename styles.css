@@ -1,0 +1,387 @@
+/* Design Tokens */
+:root {
+    --color-primary: #172B43;
+    --color-accent: #D5A34B;
+    --color-background: #FFFFFF;
+    --color-surface: #F3F5F7;
+    --color-text: #263238;
+    --color-text-light: #FFFFFF;
+
+    --font-body: Arial, Helvetica, sans-serif;
+
+    --container-width: 1120px;
+}
+
+/* Predictable Sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Base document Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+/* Images should not overflow their containers */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Consistent content width */
+header, main, footer {
+    width: 100%;
+}
+
+main > section {
+    padding: 64px 24px;
+} 
+
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 24px;
+    padding: 20px 5%; 
+    background-color: var(--color-primary);
+}
+
+/* Company name */
+header > a {
+    color: var(--color-text-light);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    color: var(--color-accent);
+}
+
+/* Hero section */
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 480px;
+    padding: 80px 8%;
+    background-color: var(--color-surface);
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.hero-label {
+    margin-bottom: 16px;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 0 0 24px;
+    color: var(--color-primary);
+    font-size: clamp(2.2rem , 5vw, 3.8rem);
+    line-height: 1.15;
+}
+
+.hero-description {
+    max-width: 560px;
+    margin-bottom: 32px;
+    font-size: 1.1rem;
+}
+
+/* Reusable button styles */
+.button {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.button-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.button-primary:hover {
+    background-color: #294866;
+}
+
+.button:focus-visible,
+nav a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+/* Services section*/
+.services-section {
+    padding: 80px 8%;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.section-label {
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin: 8px 0 16px;
+    color: var(--color-primary);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1.2;
+}
+
+.section-heading > p:last-child {
+    color: var(--color-text);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.service-card {
+    padding: 32px 24px;
+    border: 1px solid #E1E6EB;
+    border-radius: 8px;
+    background-color: var(--color-background);
+}
+
+.service-card h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+    font-size: 1.25rem;
+}
+
+.service-card p {
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+/* Why choose us section */
+.why-us-section {
+    padding: 80px 8%;
+    background-color: var(--color-surface);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.benefit-card {
+    padding: 28px 24px;
+    border-left: 4px solid var(--color-accent);
+    background-color: var(--color-background);
+}
+
+.benefit-card h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}
+
+.benefit-card p {
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.project-card {
+    padding: 32px 24px;
+    border: 1px solid #E1E6EB;
+    border-radius: 8px;
+    background-color: var(--color-surface);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+    font-size: 1.25rem;
+}
+
+.project-card p {
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.project-card img {
+    width: 100%; /* It fill the available width of its container */
+    aspect-ratio: 4 / 3; /* It establishes a consistent image shape */
+    object-fit: cover; /*  It fills the image box without distortion, but parts of the image may be cropped. */
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* About section */
+.about-section {
+    padding: 80px 8%;
+    background-color: var(--color-surface);
+}
+
+.about-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    margin: 8px 0 24px;
+    color: var(--color-primary);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1.2;
+}
+
+.about-content p {
+    margin-bottom: 24px;
+}
+
+.about-content .button {
+    margin-top: 8px;
+}
+
+/* Contact section */
+.contact-section {
+    padding: 80px 8%;
+    background-color: var(--color-background);
+}
+
+/* Form container */
+#quote-form {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Each label and field */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #A8B2BC;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+#form-status {
+    margin: 0 0 16px;
+    font-size: 0.95rem;
+    color: var(--color-primary);
+}
+
+#form-status:empty {
+    display: none;
+}
+
+/* Tablet Layout */
+@media (max-width: 900px) {
+    .services-grid,
+    .benefits-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .services-grid,
+    .benefits-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-section,
+    .why-us-section,
+    .projects-section,
+    .about-section,
+    .contact-section {
+        padding: 56px 24px;
+    }
+}
+
+/* Recent Projects section */
+.projects-section {
+    padding: 80px 8%;
+    background-color: var(--color-background);
+}
